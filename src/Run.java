@@ -22,6 +22,7 @@ class Run {
         Drinker notRadek = new Drinker("Not Radek", Sex.MAN, 73);
         Alcohol vodka40 = new Alcohol("Vodka 40%", 0.36);
         Alcohol beer = new Alcohol("Beer", 0.05);
+        Alcohol hooch = new Alcohol("Hooch" , 0.7);
 
         toDrink.add(vodka40);
         toDrink.add(beer);
@@ -31,6 +32,7 @@ class Run {
 
         notRadek.toSober();
 
+        toDrink.add(hooch);
         drinkAlko(notRadek, toDrink);
     }
 
@@ -38,7 +40,7 @@ class Run {
         toDrink.forEach(a -> {
             System.out.print(drinker.getName() + " (" + drinker.getSex() + ") " + drinker.getWeight() + " kg "
                     + a.getName() + " ma " + a.getPower() * 100 + " % alko ");
-            System.out.format("masz we krwi %.2f ‰ alko.\n", drinker.drink(40, a));
+            System.out.format("masz we krwi %.2f ‰ alko.\n", drinker.drink(100, a));
         });
     }
 }
