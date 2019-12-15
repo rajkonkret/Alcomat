@@ -42,15 +42,20 @@ class Run {
 //            System.out.print(drinker.getName() + " (" + drinker.getSex() + ") " + drinker.getWeight() + " kg " + drink
 //                    + " ml " + a.getName() + " ma " + a.getPower() * 100 + " % alko.");
 //            System.out.format("masz we krwi %.2f ‰ alko.\n", drinker.drink(drink, a));
-//            System.out.println("Masz " + drinker.getPureAlko() + " gr alko " + "Spalisz za: " + drinker.getPureAlko() / 10 +
+//            System.out.println("Masz " + drinker.getPureAlko() + " gr alko Spalisz za: " + drinker.getPureAlko() / 10 +
 //                    " godzin. Idź spać.");
-            System.out.printf("%s (%s) + %.1f kg %s ml %s ma %.2f %% alko.%n",
+            System.out.printf("%s (%s) + %.1f kg %s ml %s ma %.2f %% alko. Masz we krwi %.2f ‰ alko.%nMasz %.2f gr alko." +
+                            " Spalisz za: %.2f godzin(y).%n",
                     drinker.getName(),
                     drinker.getSex(),
                     drinker.getWeight(),
                     drink,
                     a.getName(),
-                    a.getPower()*100);
+                    a.getPower() * 100,
+                    drinker.drink(drink, a),
+                    drinker.getPureAlko(),
+                    drinker.getPureAlko() / 10);
+
         });
     }
 }
