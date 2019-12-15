@@ -11,17 +11,22 @@ class Drinker {
         this.pureAlko = 0.0;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public Sex getSex() {
+    Sex getSex() {
         return sex;
     }
 
-    public double getWeight() {
+    double getWeight() {
         return weight;
     }
+
+    double getPureAlko(){
+        return pureAlko;
+    }
+
 
     double drink(int quantity, Alcohol alcohol) {
         pureAlko += quantity * alcohol.getPower() * 0.8;

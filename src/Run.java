@@ -40,8 +40,10 @@ class Run {
         toDrink.forEach(a -> {
             int drink = 700;
             System.out.print(drinker.getName() + " (" + drinker.getSex() + ") " + drinker.getWeight() + " kg " + drink
-                    + " ml " + a.getName() + " ma " + a.getPower() * 100 + " % alko ");
+                    + " ml " + a.getName() + " ma " + a.getPower() * 100 + " % alko.");
             System.out.format("masz we krwi %.2f ‰ alko.\n", drinker.drink(drink, a));
+            System.out.println("Masz " + drinker.getPureAlko() + " gr alko " + "Spalisz za: " + drinker.getPureAlko() / 10 +
+                    " godzin. Idź spać.");
         });
     }
 }
