@@ -19,10 +19,10 @@ class Run {
     public static void main(String[] args) {
         ArrayList<Alcohol> toDrink = new ArrayList<>();
 
-        Drinker notRadek = new Drinker("Not Radek", Sex.MAN, 73);
-        Alcohol vodka40 = new Alcohol("Vodka 40%", 0.36);
+        Drinker notRadek = new Drinker("Not Radek", Sex.MAN, 70);
+        Alcohol vodka40 = new Alcohol("Vodka 40%", 0.15);
         Alcohol beer = new Alcohol("Beer", 0.05);
-        Alcohol hooch = new Alcohol("Hooch" , 0.7);
+        Alcohol hooch = new Alcohol("Hooch", 0.7);
 
         toDrink.add(vodka40);
         toDrink.add(beer);
@@ -38,9 +38,10 @@ class Run {
 
     static void drinkAlko(Drinker drinker, ArrayList<Alcohol> toDrink) {
         toDrink.forEach(a -> {
-            System.out.print(drinker.getName() + " (" + drinker.getSex() + ") " + drinker.getWeight() + " kg "
-                    + a.getName() + " ma " + a.getPower() * 100 + " % alko ");
-            System.out.format("masz we krwi %.2f ‰ alko.\n", drinker.drink(100, a));
+            int drink = 700;
+            System.out.print(drinker.getName() + " (" + drinker.getSex() + ") " + drinker.getWeight() + " kg " + drink
+                    + " ml " + a.getName() + " ma " + a.getPower() * 100 + " % alko ");
+            System.out.format("masz we krwi %.2f ‰ alko.\n", drinker.drink(drink, a));
         });
     }
 }
